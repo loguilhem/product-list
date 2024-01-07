@@ -1,4 +1,6 @@
 import {Fragment, useState} from "react";
+import {Input} from "./components/forms/input.jsx";
+import {Checkbox} from "./components/forms/checkbox.jsx";
 
 const PRODUCTS = [
     { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
@@ -11,17 +13,29 @@ const PRODUCTS = [
 
 function App() {
     return <>
-
+        <SearchBar />
+        <ProductTable />
     </>
 }
 
 function SearchBar () {
-
+    return <div>
+        <div>
+            <Input value="" onChange={() => null} placeholder="search" />
+            <Checkbox checked={false} onChange={() => null} label={"Only available"}  id={"stockOnly"} />
+        </div>
+    </div>
 }
 
-function ProductTable () {
-
+function ProductTable ({products}) {
+    return <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+    </table>
 }
-
 
 export default App
