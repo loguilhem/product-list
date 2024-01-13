@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import {useRefSync} from "./useRefSync.js";
 
-/**
- * @param {string} url
- * @param {FetchEventInit} options
- */
+
 export function useFetch(url, options) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);

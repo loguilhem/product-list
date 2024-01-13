@@ -5,12 +5,12 @@ import {PageContent} from "./pages/PageContent.jsx";
 import {Home} from "./pages/Home.jsx";
 
 function App() {
-    const {page} = useHashNavigation();
+    const {page, param} = useHashNavigation();
 
     return <>
         <Header page={page} />
 
-        <PageContent page={page} />
+        <PageContent page={page} param={param} />
     </>
 }
 

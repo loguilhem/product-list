@@ -4,14 +4,14 @@ import {Single} from "./Single.jsx";
 import {render} from "react-dom";
 import {NotFound} from "./NotFound.jsx";
 
-export function PageContent ({page}) {
+export function PageContent ({page, param}) {
     switch (page) {
-        case '#home':
+        case 'home':
             return <Home />
-        case '#contact':
+        case 'contact':
             return <Contact />
-        case '#post':
-            return <Single />
+        case 'post':
+            return <Single postId={param} />
         default:
             return <NotFound page={page} />
     }
